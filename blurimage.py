@@ -15,7 +15,8 @@ while True:
         rphoto=cv2.rectangle(photo,(x1,y1),(x2,y2),[0,0,255],2)
         cphoto=photo[y1:y2,x1:x2]
         bphoto=cv2.blur(cphoto,(10,10))
-        photo[y1:y1+bphoto.shape[0],x1:x1+bphoto.shape[1]]=bphoto
+        #photo[y1:y1+bphoto.shape[0],x1:x1+bphoto.shape[1]]=bphoto
+        photo[y1:y2,x1:x2]=bphoto
         cv2.imshow('hi',photo)
         if cv2.waitKey(100)==13:
             break
